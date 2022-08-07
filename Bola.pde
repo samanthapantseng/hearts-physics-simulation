@@ -1,55 +1,29 @@
-import traer.physics.*;
+class Bola {
 
-Bola bola;
-ParticleSystem mundoVirtual;
-PImage base;
-
-void setup() {
+  Particle particle;
   
-  //fullScreen();
-  size (1920,1080);
-  smooth();
-  ellipseMode(CENTER);
-  noCursor();
+  float radio;
+  color clr;
   
-  mundoVirtual = new ParticleSystem(0.01, 0.0001);
-  bola = new Bola(mundoVirtual, width/8, 3*height/4, width/64, color(0));
-  
-  base =loadImage("baseb.png");
-}
-
-void draw() {
-
-  mundoVirtual.tick();
-  background(255);
-  image(base, 0, height-200);
-  bola.dibujar();
-  bola.handleBoundaryCollisions();
-  
-  
-
-  
-}
-
-
-// inputs
-void keyPressed(){
-  
-  if (key == ' ') {
-    bola.particle.velocity().set(bola.particle.velocity().x(), -30, 0 );
+  public Bola(ParticleSystem mundoVirtual, float _x, float _y, float _radio, color _clr) {
+    
+    particle = mundoVirtual.makeParticle(0.01, _x, _y, 0 ); 
+    radio = _radio;
+    clr = _clr;  
   }
   
-  if (key == CODED) {
-    if (keyCode == RIGHT) {
-        bola.particle.velocity().set(5, bola.particle.velocity().y(), 0 );
-    }
-    
-    else if (keyCode == LEFT) {
-        bola.particle.velocity().set(-5, bola.particle.velocity().y(), 0 );
-    }
-    
-    else if (keyCode == UP) {
-        bola.particle.velocity().set(bola.particle.velocity().x(), -30, 0);
-    }
+  void dibujar() {
+
+    fill(clr);
+    ellipse(particle.position().x(), particle.position().y(), radio, radio);    
   }
+  
+  void handleBoundaryCollisions(){
+  
+    if ( particle.position().x() < 0 || particle.position().x() > width )
+      particle.velocity().set( -0.9*particle.velocity().x(), particle.velocity().y(), 0 );
+    if ( particle.position().y() < 0 || particle.position().y() > height-196-width/64 )
+      particle.velocity().set( particle.velocity().x(), -0.9*particle.velocity().y(), 0 );
+    particle.position().set( constrain( particle.position().x(), 0, width ), constrain( particle.position().y(), 0, height-196-width/64), 0 ); 
+  }  
 }
