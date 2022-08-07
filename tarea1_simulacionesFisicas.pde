@@ -7,7 +7,6 @@ PImage base;
 void setup() {
   
   //fullScreen();
-  size (1920,1080);
   smooth();
   ellipseMode(CENTER);
   noCursor();
@@ -22,7 +21,7 @@ void draw() {
 
   mundoVirtual.tick();
   background(255);
-  image(base, 0, height-200);
+  image(base, 0, height-196);
   bola.dibujar();
   bola.handleBoundaryCollisions();
   
