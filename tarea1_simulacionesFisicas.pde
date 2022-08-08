@@ -6,7 +6,7 @@ PImage base;
 
 void setup() {
   
-  //fullScreen();
+  fullScreen();
   smooth();
   ellipseMode(CENTER);
   noCursor();
@@ -24,8 +24,25 @@ void draw() {
   image(base, 0, height-196);
   bola.dibujar();
   bola.handleBoundaryCollisions();
-  
-  
+}
 
+void keyPressed(){
   
+  if (key == ' ') {
+    bola.particle.velocity().set(bola.particle.velocity().x(), -30, 0 );
+  }
+  
+  if (key == CODED) {
+    if (keyCode == RIGHT) {
+        bola.particle.velocity().set(5, bola.particle.velocity().y(), 0 );
+    }
+    
+    else if (keyCode == LEFT) {
+        bola.particle.velocity().set(-5, bola.particle.velocity().y(), 0 );
+    }
+    
+    else if (keyCode == UP) {
+        bola.particle.velocity().set(bola.particle.velocity().x(), -30, 0);
+    }
+  }
 }
