@@ -13,7 +13,7 @@ class Bola {
   }
   
   void dibujar() {
-
+    noStroke();
     fill(clr);
     ellipse(particle.position().x(), particle.position().y(), radio, radio);    
   }

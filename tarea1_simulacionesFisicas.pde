@@ -3,6 +3,8 @@ import processing.sound.*;
 
 SoundFile song;
 Bola bola;
+TelaEsquina telaEsquina;
+
 ParticleSystem mundoVirtual;
 PImage base;
 PImage background;
@@ -22,7 +24,8 @@ void setup() {
   
   mundoVirtual = new ParticleSystem(0.01, 0.0001);
   bola = new Bola(mundoVirtual, width/8, 3*height/4, width/64, color(0));
-  
+  telaEsquina = new TelaEsquina(mundoVirtual);
+
   base =loadImage("baseb.png");
   background =loadImage("background.png");
   
