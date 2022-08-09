@@ -1,5 +1,7 @@
 import traer.physics.*;
+import processing.sound.*;
 
+SoundFile song;
 Bola bola;
 ParticleSystem mundoVirtual;
 PImage base;
@@ -26,6 +28,9 @@ void setup() {
   
   font = createFont("AvenirLTStd-Light.otf", width/40);
   textFont(font);
+  
+  song = new SoundFile(this, "intothesea.mp3");
+  song.loop();
   
   
   arrayDeParticulas = new Particle[cantidadDeParticulasPorLado][cantidadDeParticulasPorLado];
