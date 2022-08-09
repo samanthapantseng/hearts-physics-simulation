@@ -24,7 +24,6 @@ void setup() {
   
   mundoVirtual = new ParticleSystem(0.01, 0.0001);
   bola = new Bola(mundoVirtual, width/8, 3*height/4, width/64, color(0));
-  telaEsquina = new TelaEsquina(mundoVirtual);
 
   base =loadImage("baseb.png");
   background =loadImage("background.png");
@@ -35,7 +34,9 @@ void setup() {
   song = new SoundFile(this, "intothesea.mp3");
   song.loop();
   
-  
+  telaEsquina = new TelaEsquina(mundoVirtual);
+   
+   
   arrayDeParticulas = new Particle[cantidadDeParticulasPorLado][cantidadDeParticulasPorLado];
   float pasoEnX = (float) ((width / 8) / cantidadDeParticulasPorLado);
   float pasoEnY = (float) ((height / 8) / cantidadDeParticulasPorLado);
