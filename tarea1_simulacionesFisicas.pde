@@ -34,7 +34,7 @@ void setup() {
   song = new SoundFile(this, "intothesea.mp3");
   song.loop();
   
-  telaEsquina = new TelaEsquina(mundoVirtual);
+
    
    
   arrayDeParticulas = new Particle[cantidadDeParticulasPorLado][cantidadDeParticulasPorLado];

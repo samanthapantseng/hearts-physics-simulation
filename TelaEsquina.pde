@@ -57,5 +57,4 @@ class TelaEsquina {
       endShape();
     } // end for
   }
-  
 }
