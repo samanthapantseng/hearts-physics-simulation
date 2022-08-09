@@ -9,10 +9,6 @@ PImage base;
 PImage background;
 PFont font;
 
-int cantidadDeParticulasPorLado = 30;
-float durezaDeResortes = 0.2;
-float elasticidadDeResortes = 0.1;
-
 void setup() {
   
   fullScreen();
