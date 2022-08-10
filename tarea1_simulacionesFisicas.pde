@@ -39,7 +39,7 @@ void draw() {
   mundoVirtual.tick();
   
   background(255);
-  //image(background, 0, 0, width, height);
+  image(background, 0, 0, width, height);
   //image(base, 0, height-196);
   tela1.dibujar();
   bola.dibujar();
