@@ -18,11 +18,10 @@ void setup() {
   noCursor();
   colorMode(HSB, 400);
   
-  tela1 = new Tela (mundoVirtual, 40);
-  
   mundoVirtual = new ParticleSystem(0.02, 0.0001);
   bola = new Bola(mundoVirtual, width/8, 3*height/4, width/64, color(0));
-
+  tela1 = new Tela (mundoVirtual, 40);
+  
   //base =loadImage("baseb.png");
   background =loadImage("background.png");
   
