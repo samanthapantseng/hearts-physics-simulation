@@ -28,11 +28,11 @@ void setup() {
   
   bola = new Bola(mundoVirtual, width/8, 3*height/4, width/64, color(#FFFFFF, 95));
   
-  tela1 = new Tela (mundoVirtual, 40);
+  tela1 = new Tela (mundoVirtual, 60);
   tela2 = new Tela2 (mundoVirtual, 40);
-  tela3 = new Tela3 (mundoVirtual, 40);
+  tela3 = new Tela3 (mundoVirtual, 60);
   tela4 = new Tela4 (mundoVirtual, 40);
-  tela5 = new Tela5 (mundoVirtual, 40);
+  tela5 = new Tela5 (mundoVirtual, 60);
   
   tela1.repulsion(mundoVirtual, bola);  
   tela2.repulsion(mundoVirtual, bola); 

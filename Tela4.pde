@@ -12,13 +12,13 @@ class Tela4 {
     elasticidadDeResortes = 0.1;
     
     arrayDeParticulas = new Particle[cantidadDeParticulasPorLado][cantidadDeParticulasPorLado];
-    float pasoEnX = ((width / 2) / cantidadDeParticulasPorLado-(cantidadDeParticulasPorLado/4));
-    float pasoEnY = ((height / 2) / cantidadDeParticulasPorLado-(cantidadDeParticulasPorLado/4));
+    float pasoEnX = ((width/4) / cantidadDeParticulasPorLado);
+    float pasoEnY = ((height/4) / cantidadDeParticulasPorLado);
       
     // making particles & horizontal springs
     for (int i = 0; i < cantidadDeParticulasPorLado; i++) {
       for (int j = 0; j < cantidadDeParticulasPorLado; j++) {
-        arrayDeParticulas[i][j] = mundoVirtual.makeParticle(0.25, (width*3/5) + j * pasoEnX-(width/19), (i * pasoEnY)-height/17, 0.0); // ( float mass, float x, float y, float z )
+        arrayDeParticulas[i][j] = mundoVirtual.makeParticle(0.25, (j * pasoEnX)-((cantidadDeParticulasPorLado/2)*pasoEnX)+width*4/6, (i * pasoEnY)-((cantidadDeParticulasPorLado/2)*pasoEnY), 0.0);  // ( float mass, float x, float y, float z )
         if (j > 0) mundoVirtual.makeSpring(arrayDeParticulas[i][j - 1], arrayDeParticulas[i][j], durezaDeResortes, elasticidadDeResortes, pasoEnX);
       }
     }
@@ -50,7 +50,7 @@ class Tela4 {
         vertex(arrayDeParticulas[i][j+1].position().x(), arrayDeParticulas[i][j+1].position().y());
         vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
         endShape();
-        fill(#ffffff, 40);
+         fill(#222222, 200);
       
         if (i==0 | i==20 | j==0 | j==20 | j==38 | i==38){ //bordes
           beginShape();
@@ -59,7 +59,7 @@ class Tela4 {
           vertex(arrayDeParticulas[i+1][j+1].position().x(), arrayDeParticulas[i+1][j+1].position().y());
           vertex(arrayDeParticulas[i][j+1].position().x(), arrayDeParticulas[i][j+1].position().y());
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
-          fill(#ffffff, 250);
+          fill(#222222, 250);
           endShape();
         }
       
@@ -71,7 +71,7 @@ class Tela4 {
           vertex(arrayDeParticulas[i][j+1].position().x(), arrayDeParticulas[i][j+1].position().y());
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
           endShape();
-          fill(#ffffff,200);
+          fill(#222222,200);
         }
       
         else if (i > 28  && i < 32 && j > 28  && 32 > j){
@@ -83,7 +83,7 @@ class Tela4 {
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
           //if (j==10 || i<2){      
           endShape();
-          fill(#ffffff,200);
+          fill(#222222,200);
         }
       
         else if (i > 8  && i < 12 && j > 28  && 32 > j){
@@ -95,7 +95,7 @@ class Tela4 {
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
           //if (j==10 || i<2){          
           endShape();
-          fill(#ffffff,200);
+          fill(#222222,200);
         }
        
         else if (i > 28  && i < 32 && j > 8  && 12 > j){
@@ -107,7 +107,7 @@ class Tela4 {
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
           //if (j==10 || i<2){          
           endShape();
-          fill(#ffffff,200);
+          fill(#222222,200);
         }
       
         else if (i > 14  && i < 26 && j > 14  && 26 > j){
@@ -119,11 +119,12 @@ class Tela4 {
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
           //if (j==10 || i<2){          
           endShape();
-          fill(#ffffff,200);
+          fill(#222222,200);
         }      
       }    
     }
   }
+
     void repulsion(ParticleSystem mundoVirtual, Bola bola) {
     
     for (int j = 0; j < cantidadDeParticulasPorLado-1; j++) {
