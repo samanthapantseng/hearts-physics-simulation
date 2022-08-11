@@ -18,7 +18,7 @@ class Tela2 {
     // making particles & horizontal springs
     for (int i = 0; i < cantidadDeParticulasPorLado; i++) {
       for (int j = 0; j < cantidadDeParticulasPorLado; j++) {
-        arrayDeParticulas[i][j] = mundoVirtual.makeParticle(0.25, (j * pasoEnX)-((cantidadDeParticulasPorLado/2)*pasoEnX)+width*2/6, (i * pasoEnY)-((cantidadDeParticulasPorLado/2)*pasoEnY), 0.0);  // ( float mass, float x, float y, float z )
+        arrayDeParticulas[i][j] = mundoVirtual.makeParticle(0.25, (j * pasoEnX)-((cantidadDeParticulasPorLado/2)*pasoEnX)+width*2/6, 2*height/16+(i * pasoEnY)-((cantidadDeParticulasPorLado/2)*pasoEnY), 0.0);  // ( float mass, float x, float y, float z )
         if (j > 0) mundoVirtual.makeSpring(arrayDeParticulas[i][j - 1], arrayDeParticulas[i][j], durezaDeResortes, elasticidadDeResortes, pasoEnX);
       }
     }
