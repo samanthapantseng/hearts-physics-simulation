@@ -4,6 +4,12 @@ import processing.sound.*;
 SoundFile song;
 Bola bola;
 Tela tela1;
+Tela2 tela2;
+Tela3 tela3;
+Tela4 tela4;
+Tela5 tela5;
+
+
 
 ParticleSystem mundoVirtual;
 PImage base;
@@ -18,9 +24,14 @@ void setup() {
   noCursor();
   colorMode(HSB, 400);
   
-  mundoVirtual = new ParticleSystem(0.02, 0.0001);
+  mundoVirtual = new ParticleSystem(0.02, 0.001);
   bola = new Bola(mundoVirtual, width/8, 3*height/4, width/64, color(0));
+  
   tela1 = new Tela (mundoVirtual, 40);
+  tela2 = new Tela2 (mundoVirtual, 40);
+  tela3 = new Tela3 (mundoVirtual, 40);
+  tela4 = new Tela4 (mundoVirtual, 40);
+  tela5 = new Tela5 (mundoVirtual, 40);
   
   //base =loadImage("baseb.png");
   background =loadImage("background.png");
@@ -38,9 +49,15 @@ void draw() {
   mundoVirtual.tick();
   
   background(255);
-  image(background, 0, 0, width, height);
+  //image(background, 0, 0, width, height);
   //image(base, 0, height-196);
   tela1.dibujar();
+  tela2.dibujar();
+  tela3.dibujar();
+  tela4.dibujar();
+  tela5.dibujar();
+  
+  
   bola.dibujar();
   bola.handleBoundaryCollisions();
   noStroke();
