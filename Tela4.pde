@@ -124,4 +124,12 @@ class Tela4 {
       }    
     }
   }
+    void repulsion(ParticleSystem mundoVirtual, Bola bola) {
+    
+    for (int j = 0; j < cantidadDeParticulasPorLado-1; j++) {
+      for (int i = 0; i < cantidadDeParticulasPorLado-1; i++) {
+        mundoVirtual.makeAttraction(arrayDeParticulas[i][j], bola.particle, -500000, 30);    
+      }
+    }
+  }
 }

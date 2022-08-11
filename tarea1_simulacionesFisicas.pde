@@ -2,7 +2,9 @@ import traer.physics.*;
 import processing.sound.*;
 
 SoundFile song;
+
 Bola bola;
+
 Tela tela1;
 Tela2 tela2;
 Tela3 tela3;
@@ -23,7 +25,8 @@ void setup() {
   colorMode(HSB, 400);
   
   mundoVirtual = new ParticleSystem(0.02, 0.001);
-  bola = new Bola(mundoVirtual, width/8, 3*height/4, width/64, color(255));
+  
+  bola = new Bola(mundoVirtual, width/8, 3*height/4, width/64, color(#FFFFFF, 95));
   
   tela1 = new Tela (mundoVirtual, 40);
   tela2 = new Tela2 (mundoVirtual, 40);
@@ -31,16 +34,21 @@ void setup() {
   tela4 = new Tela4 (mundoVirtual, 40);
   tela5 = new Tela5 (mundoVirtual, 40);
   
-  //base =loadImage("baseb.png");
-  background =loadImage("background.png");
+  tela1.repulsion(mundoVirtual, bola);  
+  tela2.repulsion(mundoVirtual, bola); 
+  tela3.repulsion(mundoVirtual, bola); 
+  tela4.repulsion(mundoVirtual, bola); 
+  tela5.repulsion(mundoVirtual, bola);   
   
+  //base =loadImage("baseb.png");
+  background =loadImage("background.png");  
   background.resize(width, height);
   
   font = createFont("AvenirLTStd-Light.otf", width/40);
   textFont(font);
   
   song = new SoundFile(this, "intothesea.mp3");
-  song.loop();
+  song.loop();  
   
 }
 
@@ -57,9 +65,10 @@ void draw() {
   tela4.dibujar();
   tela5.dibujar();
   
-  
+  bola.particle.position().set(mouseX, mouseY, 0 );
   bola.dibujar();
-  bola.handleBoundaryCollisions();
+  //bola.handleBoundaryCollisions();
+  
   noStroke();
   
   beginShape();
@@ -99,23 +108,23 @@ void draw() {
     text("touch their hearts", width/2, height/2);  
 }
 
-void keyPressed(){
+//void keyPressed(){
   
-  if (key == ' ') {
-    bola.particle.velocity().set(bola.particle.velocity().x(), -50, 0 );
-  }
+//  if (key == ' ') {
+//    bola.particle.velocity().set(bola.particle.velocity().x(), -50, 0 );
+//  }
   
-  if (key == CODED) {
-    if (keyCode == RIGHT) {
-        bola.particle.velocity().set(25, bola.particle.velocity().y(), 0 );
-    }
+//  if (key == CODED) {
+//    if (keyCode == RIGHT) {
+//        bola.particle.velocity().set(25, bola.particle.velocity().y(), 0 );
+//    }
     
-    else if (keyCode == LEFT) {
-        bola.particle.velocity().set(-25, bola.particle.velocity().y(), 0 );
-    }
+//    else if (keyCode == LEFT) {
+//        bola.particle.velocity().set(-25, bola.particle.velocity().y(), 0 );
+//    }
     
-    else if (keyCode == UP) {
-        bola.particle.velocity().set(bola.particle.velocity().x(), -60, 0);
-    }
-  }
-}
+//    else if (keyCode == UP) {
+//        bola.particle.velocity().set(bola.particle.velocity().x(), -60, 0);
+//    }
+//  }
+//}

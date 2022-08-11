@@ -9,7 +9,8 @@ class Bola {
     
     particle = mundoVirtual.makeParticle(0.01, _x, _y, 0 ); 
     radio = _radio;
-    clr = _clr;  
+    clr = _clr;
+    particle.makeFixed();
   }
   
   void dibujar() {
