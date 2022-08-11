@@ -69,39 +69,41 @@ void draw() {
   
   noStroke();
   
-  beginShape();
-      vertex(width/2-width/2.08, height-200);
-      vertex(width/2+width/2.08, height-200);
-      vertex(width/2+width/2.08, height-180);
-      vertex(width/2-width/2.08, height-180);
-      //vertex(width/4, height-200);
-      fill(#201D24);
-      noStroke();
-      endShape(CLOSE);
-
-  beginShape();
-      vertex(width/2-width/2.2, height-180);
-      vertex(width/2+width/2.2, height-180);
-      vertex(width/2+width/2.5, height);
-      vertex(width/2-width/2.5, height);
-     // vertex(width/2-400, height-180);
-      fill(#221F27);
-      noStroke();
-      endShape(CLOSE);
-      
-  beginShape();
-      vertex(width/2-width/2.2, height-180);
-      vertex(width/2+width/2.2, height-180);
-      vertex(width/2+width*0.445, height-150);
-      vertex(width/2-width*0.445, height-150);
-     // vertex(width/2-400, height-180);
-      fill(#221F27,30);
-      noStroke();
-      endShape(CLOSE);
-  
-  //if tela no cambia de color;
+// instrucciones
     textSize(width/64);
     textAlign(CENTER);
     fill(#FFFFFF, 80);
-    text("touch their hearts", width/2, height/2);  
+    text("touch their hearts", width/2, 3*height/5);  
+    
+// base que no está en uso porque la bola ya no rebota, sino que flota
+
+  //beginShape();
+  //    vertex(width/2-width/2.08, height-200);
+  //    vertex(width/2+width/2.08, height-200);
+  //    vertex(width/2+width/2.08, height-180);
+  //    vertex(width/2-width/2.08, height-180);
+  //    //vertex(width/4, height-200);
+  //    fill(#201D24);
+  //    noStroke();
+  //    endShape(CLOSE);
+
+  //beginShape();
+  //    vertex(width/2-width/2.2, height-180);
+  //    vertex(width/2+width/2.2, height-180);
+  //    vertex(width/2+width/2.5, height);
+  //    vertex(width/2-width/2.5, height);
+  //   // vertex(width/2-400, height-180);
+  //    fill(#221F27);
+  //    noStroke();
+  //    endShape(CLOSE);
+      
+  //beginShape();
+  //    vertex(width/2-width/2.2, height-180);
+  //    vertex(width/2+width/2.2, height-180);
+  //    vertex(width/2+width*0.445, height-150);
+  //    vertex(width/2-width*0.445, height-150);
+  //   // vertex(width/2-400, height-180);
+  //    fill(#221F27,30);
+  //    noStroke();
+  //    endShape(CLOSE);
 }
