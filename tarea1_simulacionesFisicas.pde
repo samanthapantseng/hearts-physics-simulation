@@ -27,12 +27,14 @@ void setup() {
   mundoVirtual = new ParticleSystem(0.02, 0.001);
   
   bola = new Bola(mundoVirtual, width/8, 3*height/4, width/64, color(#FFFFFF, 95));
+  mouseX = width/2;
+  mouseY = 3*height/4;  
   
-  tela1 = new Tela (mundoVirtual, 60);
+  tela1 = new Tela (mundoVirtual, 70);
   tela2 = new Tela2 (mundoVirtual, 40);
-  tela3 = new Tela3 (mundoVirtual, 60);
+  tela3 = new Tela3 (mundoVirtual, 70);
   tela4 = new Tela4 (mundoVirtual, 40);
-  tela5 = new Tela5 (mundoVirtual, 60);
+  tela5 = new Tela5 (mundoVirtual, 70);
   
   tela1.repulsion(mundoVirtual, bola);  
   tela2.repulsion(mundoVirtual, bola); 
@@ -40,7 +42,6 @@ void setup() {
   tela4.repulsion(mundoVirtual, bola); 
   tela5.repulsion(mundoVirtual, bola);   
   
-  //base =loadImage("baseb.png");
   background =loadImage("background.png");  
   background.resize(width, height);
   
@@ -56,9 +57,7 @@ void draw() {
     
   mundoVirtual.tick();
   
-  //background(0);
   image(background, 0, 0);
-  //image(base, 0, height-196);
   tela1.dibujar();
   tela2.dibujar();
   tela3.dibujar();
@@ -67,7 +66,6 @@ void draw() {
   
   bola.particle.position().set(mouseX, mouseY, 0 );
   bola.dibujar();
-  //bola.handleBoundaryCollisions();
   
   noStroke();
   
@@ -102,29 +100,8 @@ void draw() {
       endShape(CLOSE);
   
   //if tela no cambia de color;
-    textSize(width/40);
+    textSize(width/64);
     textAlign(CENTER);
-    fill(#FFFFFF, 50);
+    fill(#FFFFFF, 80);
     text("touch their hearts", width/2, height/2);  
 }
-
-//void keyPressed(){
-  
-//  if (key == ' ') {
-//    bola.particle.velocity().set(bola.particle.velocity().x(), -50, 0 );
-//  }
-  
-//  if (key == CODED) {
-//    if (keyCode == RIGHT) {
-//        bola.particle.velocity().set(25, bola.particle.velocity().y(), 0 );
-//    }
-    
-//    else if (keyCode == LEFT) {
-//        bola.particle.velocity().set(-25, bola.particle.velocity().y(), 0 );
-//    }
-    
-//    else if (keyCode == UP) {
-//        bola.particle.velocity().set(bola.particle.velocity().x(), -60, 0);
-//    }
-//  }
-//}

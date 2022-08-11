@@ -129,7 +129,7 @@ class Tela4 {
     
     for (int j = 0; j < cantidadDeParticulasPorLado-1; j++) {
       for (int i = 0; i < cantidadDeParticulasPorLado-1; i++) {
-        mundoVirtual.makeAttraction(arrayDeParticulas[i][j], bola.particle, -500000, 30);    
+        mundoVirtual.makeAttraction(arrayDeParticulas[i][j], bola.particle, -200000, 30);    
       }
     }
   }
