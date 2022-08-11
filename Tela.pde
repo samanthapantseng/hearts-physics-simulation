@@ -32,7 +32,6 @@ class Tela {
     arrayDeParticulas[20][20].makeFixed(); //centro
     arrayDeParticulas[20][16].makeFixed(); 
     arrayDeParticulas[20][24].makeFixed(); 
-    
     arrayDeParticulas[16][20].makeFixed(); 
     arrayDeParticulas[24][20].makeFixed();
   }

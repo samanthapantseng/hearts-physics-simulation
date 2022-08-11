@@ -34,6 +34,8 @@ void setup() {
   //base =loadImage("baseb.png");
   background =loadImage("background.png");
   
+  background.resize(width, height);
+  
   font = createFont("AvenirLTStd-Light.otf", width/40);
   textFont(font);
   
@@ -46,8 +48,8 @@ void draw() {
     
   mundoVirtual.tick();
   
-  //background(255);
-  image(background, 0, 0, width, height);
+  //background(0);
+  image(background, 0, 0);
   //image(base, 0, height-196);
   tela1.dibujar();
   tela2.dibujar();
@@ -94,22 +96,22 @@ void draw() {
     textSize(width/40);
     textAlign(CENTER);
     fill(#FFFFFF, 50);
-    text("save them", width/2, height/2);  
+    text("touch their hearts", width/2, height/2);  
 }
 
 void keyPressed(){
   
   if (key == ' ') {
-    bola.particle.velocity().set(bola.particle.velocity().x(), -60, 0 );
+    bola.particle.velocity().set(bola.particle.velocity().x(), -50, 0 );
   }
   
   if (key == CODED) {
     if (keyCode == RIGHT) {
-        bola.particle.velocity().set(10, bola.particle.velocity().y(), 0 );
+        bola.particle.velocity().set(25, bola.particle.velocity().y(), 0 );
     }
     
     else if (keyCode == LEFT) {
-        bola.particle.velocity().set(-10, bola.particle.velocity().y(), 0 );
+        bola.particle.velocity().set(-25, bola.particle.velocity().y(), 0 );
     }
     
     else if (keyCode == UP) {
