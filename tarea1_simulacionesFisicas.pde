@@ -28,7 +28,7 @@ void setup() {
   
   bola = new Bola(mundoVirtual, width/8, 3*height/4, width/64, color(#FFFFFF, 95));
   mouseX = width/2;
-  mouseY = 3*height/4;  
+  mouseY = 2*height/3;  
   
   tela1 = new Tela (mundoVirtual, 70);
   tela2 = new Tela2 (mundoVirtual, 40);
