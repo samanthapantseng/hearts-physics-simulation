@@ -15,8 +15,8 @@ class Corazon {
     
    }
    
-   float getX() {
-   return pX;
+ float getX() {
+ return pX;
  }
  
  float getY() {

@@ -2,7 +2,7 @@
    Escuela de Diseño Industrial
    D7 Visual - Tarea 1 Simulaciones físicas
    Valeria Navarro
-   Samantha Pan Tseng
+   Samantha Pan Tseng  - 2019065194
    Elke Segura Badilla - 2018086696
    Valeria Leslie Serrano  
 */
@@ -28,6 +28,7 @@ Corazon cora4;
 Corazon cora5;
 
 ParticleSystem mundoVirtual;
+
 PImage base;
 PImage background;
 PFont font;
@@ -59,9 +60,7 @@ void setup() {
   cora2 = new Corazon (width*2/6, height/8);
   cora3 = new Corazon (width*3/6, height/10);
   cora4 = new Corazon (width*4/6, height/8);
-  cora5 = new Corazon (width*5/6, height/10);
-  
-  
+  cora5 = new Corazon (width*5/6, height/10);  
   
   tela1.repulsion(mundoVirtual, bola);  
   tela2.repulsion(mundoVirtual, bola); 
@@ -82,7 +81,6 @@ void setup() {
   
   clrNegro = color(#222222);
   clrBlanco = color(#ffffff);
-  
 }
 
 void draw() {
@@ -93,33 +91,29 @@ void draw() {
   
    if (bola.meToco(cora1.getX(), cora1.getY()) == true) {
     tela1.setColor(#ffffff);
-    sfxTela.play();
- 
+    sfxTela.play(); 
   }
   
   if (bola.meToco(cora2.getX(), cora2.getY()) == true) {
     tela2.setColor(#ffffff);
-    sfxTela.play();
- 
+    sfxTela.play(); 
   }
   
   if (bola.meToco(cora3.getX(), cora3.getY()) == true) {
     tela3.setColor(#ffffff);
-    sfxTela.play();
- 
+    sfxTela.play(); 
   }
   
    if (bola.meToco(cora4.getX(), cora4.getY()) == true) {
     tela4.setColor(#ffffff);
-    sfxTela.play();
- 
+    sfxTela.play(); 
   }
   
    if (bola.meToco(cora5.getX(), cora5.getY()) == true) {
     tela5.setColor(#ffffff);
-    sfxTela.play();
- 
+    sfxTela.play(); 
   }
+  
   tela1.dibujar();
   tela2.dibujar();
   tela3.dibujar();
@@ -131,16 +125,13 @@ void draw() {
   cora3.dibujar();
   cora4.dibujar();
   cora5.dibujar();
-  
-  
+    
   bola.particle.position().set(mouseX, mouseY, 0 );
   bola.dibujar();
   
-
-  
   noStroke();
   
-   // escribir instrucciones mientras hayan telas negras
+  // escribir instrucciones mientras hayan telas negras
   
   if (tela1.getColor() == clrNegro ){
     textSize(width/64);
@@ -186,57 +177,22 @@ void draw() {
             textAlign(CENTER);
             fill(#FFFFFF, 150);
             text("click [R] to restart", width/2, 4*height/5); 
-           }
+          }
         }
       }
     }
   }
-  
-
-   
-    
-// base que no está en uso porque la bola ya no rebota, sino que flota
-
-  //beginShape();
-  //    vertex(width/2-width/2.08, height-200);
-  //    vertex(width/2+width/2.08, height-200);
-  //    vertex(width/2+width/2.08, height-180);
-  //    vertex(width/2-width/2.08, height-180);
-  //    //vertex(width/4, height-200);
-  //    fill(#201D24);
-  //    noStroke();
-  //    endShape(CLOSE);
-
-  //beginShape();
-  //    vertex(width/2-width/2.2, height-180);
-  //    vertex(width/2+width/2.2, height-180);
-  //    vertex(width/2+width/2.5, height);
-  //    vertex(width/2-width/2.5, height);
-  //   // vertex(width/2-400, height-180);
-  //    fill(#221F27);
-  //    noStroke();
-  //    endShape(CLOSE);
-      
-  //beginShape();
-  //    vertex(width/2-width/2.2, height-180);
-  //    vertex(width/2+width/2.2, height-180);
-  //    vertex(width/2+width*0.445, height-150);
-  //    vertex(width/2-width*0.445, height-150);
-  //   // vertex(width/2-400, height-180);
-  //    fill(#221F27,30);
-  //    noStroke();
-  //    endShape(CLOSE);
 }
 
 void keyPressed(){    
     if (key == 'R') {
      }
-  }
+}
   
 void keyReleased() {
   tela1.setColor(#222222);
-      tela2.setColor(#222222);
-      tela3.setColor(#222222);
-      tela4.setColor(#222222);
-      tela5.setColor(#222222);
+  tela2.setColor(#222222);
+  tela3.setColor(#222222);
+  tela4.setColor(#222222);
+  tela5.setColor(#222222);
 }
