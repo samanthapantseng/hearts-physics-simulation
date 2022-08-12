@@ -32,6 +32,9 @@ PImage base;
 PImage background;
 PFont font;
 
+color clrNegro;
+color clrBlanco;
+
 void setup() {
   
   fullScreen();
@@ -76,6 +79,9 @@ void setup() {
   song.loop(); 
   
   sfxTela = new SoundFile(this, "sfxTela.mp3");
+  
+  clrNegro = color(#222222);
+  clrBlanco = color(#ffffff);
   
 }
 
@@ -134,49 +140,60 @@ void draw() {
   
   noStroke();
   
-   // para escribir instrucciones mientras está
+   // escribir instrucciones mientras hayan telas negras
   
-  if ((hex(tela1.getColor(),6)) == "#222222" ){
+  if (tela1.getColor() == clrNegro ){
     textSize(width/64);
     textAlign(CENTER);
     fill(#FFFFFF, 80);
     text("touch their hearts", width/2, 3*height/5); 
   }
   
-  if ((hex(tela2.getColor(),6)) == "#222222" ){
+  if (tela2.getColor() == clrNegro ){
     textSize(width/64);
     textAlign(CENTER);
     fill(#FFFFFF, 80);
     text("touch their hearts", width/2, 3*height/5); 
   }
   
-  if ((hex(tela3.getColor(),6)) == "#222222" ){
+  if (tela3.getColor() == clrNegro ){
     textSize(width/64);
     textAlign(CENTER);
     fill(#FFFFFF, 80);
     text("touch their hearts", width/2, 3*height/5); 
   }
   
-  if ((hex(tela4.getColor(),6)) == "#222222" ){
+  if (tela4.getColor() == clrNegro ){
     textSize(width/64);
     textAlign(CENTER);
     fill(#FFFFFF, 80);
     text("touch their hearts", width/2, 3*height/5); 
   }
   
-  if ((hex(tela5.getColor(),6)) == "#222222" ){
+  if (tela5.getColor() == clrNegro ){
     textSize(width/64);
     textAlign(CENTER);
     fill(#FFFFFF, 80);
     text("touch their hearts", width/2, 3*height/5); 
   }
   
+  if (tela1.getColor() == clrBlanco ){
+    if (tela2.getColor() == clrBlanco ){
+      if (tela3.getColor() == clrBlanco ){
+        if (tela4.getColor() == clrBlanco ){
+          if (tela5.getColor() == clrBlanco ){
+            textSize(width/64);
+            textAlign(CENTER);
+            fill(#FFFFFF, 150);
+            text("click [R] to restart", width/2, 4*height/5); 
+           }
+        }
+      }
+    }
+  }
   
-// instrucciones
-    //textSize(width/64);
-    //textAlign(CENTER);
-    //fill(#FFFFFF, 80);
-    //text("touch their hearts", width/2, 3*height/5);  
+
+   
     
 // base que no está en uso porque la bola ya no rebota, sino que flota
 
@@ -209,4 +226,17 @@ void draw() {
   //    fill(#221F27,30);
   //    noStroke();
   //    endShape(CLOSE);
+}
+
+void keyPressed(){    
+    if (key == 'R') {
+     }
+  }
+  
+void keyReleased() {
+  tela1.setColor(#222222);
+      tela2.setColor(#222222);
+      tela3.setColor(#222222);
+      tela4.setColor(#222222);
+      tela5.setColor(#222222);
 }
