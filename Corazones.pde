@@ -10,7 +10,7 @@ class Corazon {
   
    void dibujar() {
     
-    fill(#ffffff);
+    fill(#ffffff,0);
     circle(pX,pY,50);
     
    }

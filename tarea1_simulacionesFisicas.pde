@@ -42,11 +42,11 @@ void setup() {
   tela4 = new Tela4 (mundoVirtual, 40);
   tela5 = new Tela5 (mundoVirtual, 70);
   
-  cora1 = new Corazon (width*1/6, height/5);
-  cora2 = new Corazon (width*2/6, height/5);
-  cora3 = new Corazon (width*3/6, height/5);
-  cora4 = new Corazon (width*4/6, height/5);
-  cora5 = new Corazon (width*5/6, height/5);
+  cora1 = new Corazon (width*1/6, height/10);
+  cora2 = new Corazon (width*2/6, height/8);
+  cora3 = new Corazon (width*3/6, height/10);
+  cora4 = new Corazon (width*4/6, height/8);
+  cora5 = new Corazon (width*5/6, height/10);
   
   
   
@@ -72,23 +72,8 @@ void draw() {
   mundoVirtual.tick();
   
   image(background, 0, 0);
-  tela1.dibujar();
-  tela2.dibujar();
-  tela3.dibujar();
-  tela4.dibujar();
-  tela5.dibujar();
   
-  cora1.dibujar();
-  cora2.dibujar();
-  cora3.dibujar();
-  cora4.dibujar();
-  cora5.dibujar();
-  
-  
-  bola.particle.position().set(mouseX, mouseY, 0 );
-  bola.dibujar();
-  
-  if (bola.meToco(cora1.getX(), cora1.getY()) == true) {
+   if (bola.meToco(cora1.getX(), cora1.getY()) == true) {
     tela1.setColor(#ffffff);
  
   }
@@ -112,6 +97,23 @@ void draw() {
     tela5.setColor(#ffffff);
  
   }
+  tela1.dibujar();
+  tela2.dibujar();
+  tela3.dibujar();
+  tela4.dibujar();
+  tela5.dibujar();
+  
+  cora1.dibujar();
+  cora2.dibujar();
+  cora3.dibujar();
+  cora4.dibujar();
+  cora5.dibujar();
+  
+  
+  bola.particle.position().set(mouseX, mouseY, 0 );
+  bola.dibujar();
+  
+
   
   noStroke();
   
