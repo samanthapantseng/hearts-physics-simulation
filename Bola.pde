@@ -10,9 +10,10 @@ class Bola {
     
     pX= _x;
     pY= _y;
-    particle = mundoVirtual.makeParticle(0.01, pX, pY, 0 ); 
+    particle = mundoVirtual.makeParticle(0.01, pX, pY, 0); 
     radio = _radio;
     clr = _clr;
+    
     particle.makeFixed();
     
   }
@@ -24,15 +25,15 @@ class Bola {
   }
   
    float getX() {
-   return pX;
+   return particle.position().x();
  }
  
  float getY() {
-   return pY;
+   return particle.position().y();
  }
  
  boolean meToco(float _x, float _y) {
-    if (dist(_x, _y, pX, pY) < 50) {
+    if (dist(_x, _y, particle.position().x(), particle.position().y()) < 50) {
       return true;
     }
     return false;
