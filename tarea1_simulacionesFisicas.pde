@@ -146,35 +146,35 @@ void draw() {
     textSize(width/64);
     textAlign(CENTER);
     fill(#FFFFFF, 80);
-    text("touch their hearts", width/2, 3*height/5); 
+    text("touch their hearts", width/2, 4*height/5); 
   }
   
   if (tela2.getColor() == clrNegro ){
     textSize(width/64);
     textAlign(CENTER);
     fill(#FFFFFF, 80);
-    text("touch their hearts", width/2, 3*height/5); 
+    text("touch their hearts", width/2, 4*height/5); 
   }
   
   if (tela3.getColor() == clrNegro ){
     textSize(width/64);
     textAlign(CENTER);
     fill(#FFFFFF, 80);
-    text("touch their hearts", width/2, 3*height/5); 
+    text("touch their hearts", width/2, 4*height/5); 
   }
   
   if (tela4.getColor() == clrNegro ){
     textSize(width/64);
     textAlign(CENTER);
     fill(#FFFFFF, 80);
-    text("touch their hearts", width/2, 3*height/5); 
+    text("touch their hearts", width/2, 4*height/5); 
   }
   
   if (tela5.getColor() == clrNegro ){
     textSize(width/64);
     textAlign(CENTER);
     fill(#FFFFFF, 80);
-    text("touch their hearts", width/2, 3*height/5); 
+    text("touch their hearts", width/2, 4*height/5); 
   }
   
   if (tela1.getColor() == clrBlanco ){
