@@ -1,7 +1,17 @@
+/* Tecnológico de Costa Rica
+   Escuela de Diseño Industrial
+   D7 Visual - Tarea 1 Simulaciones físicas
+   Valeria Navarro
+   Samantha Pan Tseng
+   Elke Segura Badilla - 2018086696
+   Valeria Leslie Serrano  
+*/
+
 import traer.physics.*;
 import processing.sound.*;
 
 SoundFile song;
+SoundFile sfxTela;
 
 Bola bola;
 
@@ -63,7 +73,9 @@ void setup() {
   textFont(font);
   
   song = new SoundFile(this, "intothesea.mp3");
-  song.loop();  
+  song.loop(); 
+  
+  sfxTela = new SoundFile(this, "sfxTela.mp3");
   
 }
 
@@ -75,26 +87,31 @@ void draw() {
   
    if (bola.meToco(cora1.getX(), cora1.getY()) == true) {
     tela1.setColor(#ffffff);
+    sfxTela.play();
  
   }
   
   if (bola.meToco(cora2.getX(), cora2.getY()) == true) {
     tela2.setColor(#ffffff);
+    sfxTela.play();
  
   }
   
   if (bola.meToco(cora3.getX(), cora3.getY()) == true) {
     tela3.setColor(#ffffff);
+    sfxTela.play();
  
   }
   
    if (bola.meToco(cora4.getX(), cora4.getY()) == true) {
     tela4.setColor(#ffffff);
+    sfxTela.play();
  
   }
   
    if (bola.meToco(cora5.getX(), cora5.getY()) == true) {
     tela5.setColor(#ffffff);
+    sfxTela.play();
  
   }
   tela1.dibujar();
@@ -117,11 +134,49 @@ void draw() {
   
   noStroke();
   
-// instrucciones
+   // para escribir instrucciones mientras está
+  
+  if ((hex(tela1.getColor(),6)) == "#222222" ){
     textSize(width/64);
     textAlign(CENTER);
     fill(#FFFFFF, 80);
-    text("touch their hearts", width/2, 3*height/5);  
+    text("touch their hearts", width/2, 3*height/5); 
+  }
+  
+  if ((hex(tela2.getColor(),6)) == "#222222" ){
+    textSize(width/64);
+    textAlign(CENTER);
+    fill(#FFFFFF, 80);
+    text("touch their hearts", width/2, 3*height/5); 
+  }
+  
+  if ((hex(tela3.getColor(),6)) == "#222222" ){
+    textSize(width/64);
+    textAlign(CENTER);
+    fill(#FFFFFF, 80);
+    text("touch their hearts", width/2, 3*height/5); 
+  }
+  
+  if ((hex(tela4.getColor(),6)) == "#222222" ){
+    textSize(width/64);
+    textAlign(CENTER);
+    fill(#FFFFFF, 80);
+    text("touch their hearts", width/2, 3*height/5); 
+  }
+  
+  if ((hex(tela5.getColor(),6)) == "#222222" ){
+    textSize(width/64);
+    textAlign(CENTER);
+    fill(#FFFFFF, 80);
+    text("touch their hearts", width/2, 3*height/5); 
+  }
+  
+  
+// instrucciones
+    //textSize(width/64);
+    //textAlign(CENTER);
+    //fill(#FFFFFF, 80);
+    //text("touch their hearts", width/2, 3*height/5);  
     
 // base que no está en uso porque la bola ya no rebota, sino que flota
 

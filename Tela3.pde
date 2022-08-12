@@ -130,6 +130,10 @@ class Tela3 {
     }
   }
 
+  color getColor(){
+    return clr;
+  }
+
     void repulsion(ParticleSystem mundoVirtual, Bola bola) {
     
     for (int j = 0; j < cantidadDeParticulasPorLado-1; j++) {

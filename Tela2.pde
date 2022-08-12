@@ -131,6 +131,9 @@ class Tela2 {
     }
   }
 
+   color getColor(){
+    return clr;
+  }
   
     void repulsion(ParticleSystem mundoVirtual, Bola bola) {
     
