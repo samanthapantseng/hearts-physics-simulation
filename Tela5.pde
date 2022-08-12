@@ -4,12 +4,14 @@ class Tela5 {
   int cantidadDeParticulasPorLado;
   float durezaDeResortes;
   float elasticidadDeResortes;
+  color clr;
 
   public Tela5(ParticleSystem mundoVirtual, int cantidad) {
   
     cantidadDeParticulasPorLado = cantidad;
     durezaDeResortes = 0.18;
     elasticidadDeResortes = 0.1;
+    clr = color(0,0,14);
     
     arrayDeParticulas = new Particle[cantidadDeParticulasPorLado][cantidadDeParticulasPorLado];
     float pasoEnX = ((width/4) / cantidadDeParticulasPorLado);
@@ -50,7 +52,7 @@ class Tela5 {
         vertex(arrayDeParticulas[i][j+1].position().x(), arrayDeParticulas[i][j+1].position().y());
         vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
         endShape();
-         fill(#222222, 200);
+         fill(clr, 200);
       
         if (i==0 | i==20 | j==0 | j==20 | j==38 | i==38){ //bordes
           beginShape();
@@ -59,7 +61,7 @@ class Tela5 {
           vertex(arrayDeParticulas[i+1][j+1].position().x(), arrayDeParticulas[i+1][j+1].position().y());
           vertex(arrayDeParticulas[i][j+1].position().x(), arrayDeParticulas[i][j+1].position().y());
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
-          fill(#222222, 250);
+          fill(clr, 250);
           endShape();
         }
       
@@ -71,7 +73,7 @@ class Tela5 {
           vertex(arrayDeParticulas[i][j+1].position().x(), arrayDeParticulas[i][j+1].position().y());
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
           endShape();
-          fill(#222222,200);
+          fill(clr,200);
         }
       
         else if (i > 28  && i < 32 && j > 28  && 32 > j){
@@ -83,7 +85,7 @@ class Tela5 {
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
           //if (j==10 || i<2){      
           endShape();
-          fill(#222222,200);
+          fill(clr,200);
         }
       
         else if (i > 8  && i < 12 && j > 28  && 32 > j){
@@ -95,7 +97,7 @@ class Tela5 {
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
           //if (j==10 || i<2){          
           endShape();
-          fill(#222222,200);
+          fill(clr,200);
         }
        
         else if (i > 28  && i < 32 && j > 8  && 12 > j){
@@ -107,7 +109,7 @@ class Tela5 {
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
           //if (j==10 || i<2){          
           endShape();
-          fill(#222222,200);
+          fill(clr,200);
         }
       
         else if (i > 14  && i < 26 && j > 14  && 26 > j){
@@ -119,7 +121,7 @@ class Tela5 {
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
           //if (j==10 || i<2){          
           endShape();
-          fill(#222222,200);
+          fill(clr,200);
         }      
       }    
     }
