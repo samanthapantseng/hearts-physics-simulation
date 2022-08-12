@@ -4,13 +4,17 @@ class Bola {
   
   float radio;
   color clr;
+  float pX, pY;
   
   public Bola(ParticleSystem mundoVirtual, float _x, float _y, float _radio, color _clr) {
     
-    particle = mundoVirtual.makeParticle(0.01, _x, _y, 0 ); 
+    pX= _x;
+    pY= _y;
+    particle = mundoVirtual.makeParticle(0.01, pX, pY, 0 ); 
     radio = _radio;
     clr = _clr;
     particle.makeFixed();
+    
   }
   
   void dibujar() {
@@ -18,4 +22,19 @@ class Bola {
     fill(clr);
     ellipse(particle.position().x(), particle.position().y(), radio, radio);    
   }
+  
+   float getX() {
+   return pX;
+ }
+ 
+ float getY() {
+   return pY;
+ }
+ 
+ boolean meToco(float _x, float _y) {
+    if (dist(_x, _y, pX, pY) < 50) {
+      return true;
+    }
+    return false;
+   }
 }

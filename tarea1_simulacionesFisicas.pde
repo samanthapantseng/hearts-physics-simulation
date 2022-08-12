@@ -11,6 +11,12 @@ Tela3 tela3;
 Tela4 tela4;
 Tela5 tela5;
 
+Corazon cora1;
+Corazon cora2;
+Corazon cora3;
+Corazon cora4;
+Corazon cora5;
+
 ParticleSystem mundoVirtual;
 PImage base;
 PImage background;
@@ -35,6 +41,14 @@ void setup() {
   tela3 = new Tela3 (mundoVirtual, 70);
   tela4 = new Tela4 (mundoVirtual, 40);
   tela5 = new Tela5 (mundoVirtual, 70);
+  
+  cora1 = new Corazon (width*1/6, height/5);
+  cora2 = new Corazon (width*2/6, height/5);
+  cora3 = new Corazon (width*3/6, height/5);
+  cora4 = new Corazon (width*4/6, height/5);
+  cora5 = new Corazon (width*5/6, height/5);
+  
+  
   
   tela1.repulsion(mundoVirtual, bola);  
   tela2.repulsion(mundoVirtual, bola); 
@@ -64,8 +78,40 @@ void draw() {
   tela4.dibujar();
   tela5.dibujar();
   
+  cora1.dibujar();
+  cora2.dibujar();
+  cora3.dibujar();
+  cora4.dibujar();
+  cora5.dibujar();
+  
+  
   bola.particle.position().set(mouseX, mouseY, 0 );
   bola.dibujar();
+  
+  if (bola.meToco(cora1.getX(), cora1.getY()) == true) {
+    tela1.setColor(#ffffff);
+ 
+  }
+  
+  if (bola.meToco(cora2.getX(), cora2.getY()) == true) {
+    tela2.setColor(#ffffff);
+ 
+  }
+  
+  if (bola.meToco(cora3.getX(), cora3.getY()) == true) {
+    tela3.setColor(#ffffff);
+ 
+  }
+  
+   if (bola.meToco(cora4.getX(), cora4.getY()) == true) {
+    tela4.setColor(#ffffff);
+ 
+  }
+  
+   if (bola.meToco(cora5.getX(), cora5.getY()) == true) {
+    tela5.setColor(#ffffff);
+ 
+  }
   
   noStroke();
   

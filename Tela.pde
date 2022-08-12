@@ -11,7 +11,7 @@ class Tela {
     cantidadDeParticulasPorLado = cantidad;
     durezaDeResortes = 0.18;
     elasticidadDeResortes = 0.1;
-    clr = color(0,0,14);
+    clr = color(#222222);
     
     arrayDeParticulas = new Particle[cantidadDeParticulasPorLado][cantidadDeParticulasPorLado];
     float pasoEnX = ((width/4) / cantidadDeParticulasPorLado);
@@ -38,6 +38,10 @@ class Tela {
     arrayDeParticulas[24][30].makeFixed(); //derecha
     arrayDeParticulas[36][30].makeFixed();//izq
   }
+  
+  void setColor(color _clr) {
+     clr = _clr;
+   }
 
   void dibujar() {
     noStroke();
@@ -133,7 +137,10 @@ class Tela {
     for (int j = 0; j < cantidadDeParticulasPorLado-1; j++) {
       for (int i = 0; i < cantidadDeParticulasPorLado-1; i++) {
         mundoVirtual.makeAttraction(arrayDeParticulas[i][j], bola.particle, -200000, 30);    
-      }
+          }
     }
   }
-}
+    
+   
+   
+    }
