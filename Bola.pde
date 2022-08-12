@@ -24,18 +24,18 @@ class Bola {
     ellipse(particle.position().x(), particle.position().y(), radio, radio);    
   }
   
-   float getX() {
-   return particle.position().x();
- }
+  float getX() {
+    return particle.position().x();
+  }
  
- float getY() {
-   return particle.position().y();
- }
+  float getY() {
+    return particle.position().y();
+  }
  
- boolean meToco(float _x, float _y) {
+  boolean meToco(float _x, float _y) {
     if (dist(_x, _y, particle.position().x(), particle.position().y()) < 50) {
       return true;
     }
-    return false;
-   }
+      return false;
+  }
 }

@@ -1,10 +1,10 @@
 /* Tecnológico de Costa Rica
    Escuela de Diseño Industrial
    D7 Visual - Tarea 1 Simulaciones físicas
-   Valeria Navarro
+   Valeria Navarro - 2018254437
    Samantha Pan Tseng  - 2019065194
    Elke Segura Badilla - 2018086696
-   Valeria Leslie Serrano  
+   Valeria Leslie Serrano - 
 */
 
 import traer.physics.*;
@@ -15,17 +15,11 @@ SoundFile sfxTela;
 
 Bola bola;
 
-Tela tela1;
-Tela2 tela2;
-Tela3 tela3;
-Tela4 tela4;
-Tela5 tela5;
+Tela tela1, tela3, tela5;
 
-Corazon cora1;
-Corazon cora2;
-Corazon cora3;
-Corazon cora4;
-Corazon cora5;
+TelaSmall tela2, tela4;
+
+Corazon cora1, cora2, cora3, cora4, cora5;
 
 ParticleSystem mundoVirtual;
 
@@ -46,15 +40,15 @@ void setup() {
   
   mundoVirtual = new ParticleSystem(0.02, 0.001);
   
-  bola = new Bola(mundoVirtual, width/8, 3*height/4, width/64, color(#FFFFFF, 95));
+  bola = new Bola(mundoVirtual, width/8, 3*height/4, width/64, color(#FFFFFF, 99));
   mouseX = width/2;
   mouseY = 2*height/3;  
   
-  tela1 = new Tela (mundoVirtual, 70);
-  tela2 = new Tela2 (mundoVirtual, 40);
-  tela3 = new Tela3 (mundoVirtual, 70);
-  tela4 = new Tela4 (mundoVirtual, 40);
-  tela5 = new Tela5 (mundoVirtual, 70);
+  tela1 = new Tela (mundoVirtual, 70, width*1/6, height/16);
+  tela2 = new TelaSmall (mundoVirtual, 40, width*2/6, height*2/16);
+  tela3 = new Tela (mundoVirtual, 70, width*3/6, height/16);
+  tela4 = new TelaSmall (mundoVirtual, 40, width*4/6, height*2/16);
+  tela5 = new Tela (mundoVirtual, 70, width*5/6, height/16);
   
   cora1 = new Corazon (width*1/6, height/10);
   cora2 = new Corazon (width*2/6, height/8);
@@ -88,6 +82,8 @@ void draw() {
   mundoVirtual.tick();
   
   image(background, 0, 0);
+
+  // averiguar si la bola toca el corazon de la tela
   
    if (bola.meToco(cora1.getX(), cora1.getY()) == true) {
     tela1.setColor(#ffffff);
@@ -186,13 +182,13 @@ void draw() {
 
 void keyPressed(){    
     if (key == 'R') {
-     }
+    }
 }
   
 void keyReleased() {
-  tela1.setColor(#222222);
-  tela2.setColor(#222222);
-  tela3.setColor(#222222);
-  tela4.setColor(#222222);
-  tela5.setColor(#222222);
+  tela1.setColor(clrNegro);
+  tela2.setColor(clrNegro);
+  tela3.setColor(clrNegro);
+  tela4.setColor(clrNegro);
+  tela5.setColor(clrNegro);
 }

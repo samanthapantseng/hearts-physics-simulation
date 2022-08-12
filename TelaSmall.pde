@@ -1,26 +1,31 @@
-class Tela5 {
+class TelaSmall {
  
-  Particle[][] arrayDeParticulas; // un array de dos dimensiones que contiene las partículas
+  Particle[][] arrayDeParticulas; // matriz que contiene particulas
   int cantidadDeParticulasPorLado;
   float durezaDeResortes;
   float elasticidadDeResortes;
   color clr;
 
-  public Tela5(ParticleSystem mundoVirtual, int cantidad) {
+  public TelaSmall(ParticleSystem mundoVirtual, int cantidad, float _naceX, float _naceY) {
   
     cantidadDeParticulasPorLado = cantidad;
     durezaDeResortes = 0.18;
     elasticidadDeResortes = 0.1;
     clr = color(#222222);
+
+    // aca se definen en el constructor donde va a nacer la matriz
+    float naceX = _naceX;
+    float naceY = _naceY;    
     
     arrayDeParticulas = new Particle[cantidadDeParticulasPorLado][cantidadDeParticulasPorLado];
-    float pasoEnX = ((width/4) / cantidadDeParticulasPorLado);
-    float pasoEnY = ((height/4) / cantidadDeParticulasPorLado);
+    float pasoEnX = (width/4) / cantidadDeParticulasPorLado;
+    float pasoEnY = (height/4) / cantidadDeParticulasPorLado;
       
     // making particles & horizontal springs
     for (int i = 0; i < cantidadDeParticulasPorLado; i++) {
       for (int j = 0; j < cantidadDeParticulasPorLado; j++) {
-        arrayDeParticulas[i][j] = mundoVirtual.makeParticle(0.25, (j * pasoEnX)-((cantidadDeParticulasPorLado/2)*pasoEnX)+width*5/6, 1*height/16+(i * pasoEnY)-((cantidadDeParticulasPorLado/2)*pasoEnY), 0.0);  // ( float mass, float x, float y, float z )
+        arrayDeParticulas[i][j] = mundoVirtual.makeParticle(0.25, (j * pasoEnX)-((cantidadDeParticulasPorLado/2)*pasoEnX)
+        + naceX, naceY +(i * pasoEnY)-((cantidadDeParticulasPorLado/2)*pasoEnY), 0.0);  // ( float mass, float x, float y, float z )
         if (j > 0) mundoVirtual.makeSpring(arrayDeParticulas[i][j - 1], arrayDeParticulas[i][j], durezaDeResortes, elasticidadDeResortes, pasoEnX);
       }
     }
@@ -30,13 +35,13 @@ class Tela5 {
         mundoVirtual.makeSpring(arrayDeParticulas[i - 1][j], arrayDeParticulas[i][j], durezaDeResortes, elasticidadDeResortes, pasoEnY);
       }
     }
-  
-    arrayDeParticulas[30][30].makeFixed(); //centro
-    arrayDeParticulas[30][24].makeFixed(); // arriba
-    arrayDeParticulas[30][36].makeFixed(); //abajo
     
-    arrayDeParticulas[24][30].makeFixed(); //derecha
-    arrayDeParticulas[36][30].makeFixed();//izq
+    // acá se encuentran los valores que diferencian ambas telas
+    arrayDeParticulas[20][20].makeFixed();
+    arrayDeParticulas[20][16].makeFixed(); 
+    arrayDeParticulas[20][24].makeFixed(); 
+    arrayDeParticulas[16][20].makeFixed(); 
+    arrayDeParticulas[24][20].makeFixed();
   }
   
   void setColor(color _clr) {
@@ -46,7 +51,7 @@ class Tela5 {
   void dibujar() {
     noStroke();
       
-    fill(#666666, 150); // color celeste
+    fill(#666666, 150);
     for (int j = 0; j < cantidadDeParticulasPorLado-1; j++) {
       for (int i = 0; i < cantidadDeParticulasPorLado-1; i++) {
         beginShape();
@@ -87,7 +92,6 @@ class Tela5 {
           vertex(arrayDeParticulas[i+1][j+1].position().x(), arrayDeParticulas[i+1][j+1].position().y());
           vertex(arrayDeParticulas[i][j+1].position().x(), arrayDeParticulas[i][j+1].position().y());
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
-          //if (j==10 || i<2){      
           endShape();
           fill(clr,200);
         }
@@ -99,7 +103,6 @@ class Tela5 {
           vertex(arrayDeParticulas[i+1][j+1].position().x(), arrayDeParticulas[i+1][j+1].position().y());
           vertex(arrayDeParticulas[i][j+1].position().x(), arrayDeParticulas[i][j+1].position().y());
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
-          //if (j==10 || i<2){          
           endShape();
           fill(clr,200);
         }
@@ -111,7 +114,6 @@ class Tela5 {
           vertex(arrayDeParticulas[i+1][j+1].position().x(), arrayDeParticulas[i+1][j+1].position().y());
           vertex(arrayDeParticulas[i][j+1].position().x(), arrayDeParticulas[i][j+1].position().y());
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
-          //if (j==10 || i<2){          
           endShape();
           fill(clr,200);
         }
@@ -123,7 +125,6 @@ class Tela5 {
           vertex(arrayDeParticulas[i+1][j+1].position().x(), arrayDeParticulas[i+1][j+1].position().y());
           vertex(arrayDeParticulas[i][j+1].position().x(), arrayDeParticulas[i][j+1].position().y());
           vertex(arrayDeParticulas[i][j].position().x(), arrayDeParticulas[i][j].position().y());
-          //if (j==10 || i<2){          
           endShape();
           fill(clr,200);
         }      
@@ -131,7 +132,7 @@ class Tela5 {
     }
   }
 
-  color getColor(){
+   color getColor(){
     return clr;
   }
   
@@ -144,3 +145,4 @@ class Tela5 {
     }
   }
 }
+      
