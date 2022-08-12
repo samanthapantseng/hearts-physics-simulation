@@ -11,7 +11,7 @@ class Tela3 {
     cantidadDeParticulasPorLado = cantidad;
     durezaDeResortes = 0.18;
     elasticidadDeResortes = 0.1;
-    clr = color(0,0,14);
+    clr = color(#222222);
     
     arrayDeParticulas = new Particle[cantidadDeParticulasPorLado][cantidadDeParticulasPorLado];
     float pasoEnX = ((width/4) / cantidadDeParticulasPorLado);
@@ -39,6 +39,9 @@ class Tela3 {
     arrayDeParticulas[36][30].makeFixed();//izq
   }
 
+  void setColor(color _clr) {
+     clr = _clr;
+   } 
   void dibujar() {
     noStroke();
       
