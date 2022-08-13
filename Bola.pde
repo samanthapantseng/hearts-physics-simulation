@@ -24,6 +24,8 @@ class Bola {
     ellipse(particle.position().x(), particle.position().y(), radio, radio);    
   }
   
+  //métodos para conocer la posición de la partícula y averiguar si choca con otro objeto
+  
   float getX() {
     return particle.position().x();
   }

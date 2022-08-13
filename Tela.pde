@@ -22,7 +22,7 @@ class Tela {
     float pasoEnX = (width/4) / cantidadDeParticulasPorLado;
     float pasoEnY = (height/4) / cantidadDeParticulasPorLado;
 
-    // making particles & horizontal springs
+    // se define la posición de las partículas y la separación entre sus resortes horizontales
     for (int i = 0; i < cantidadDeParticulasPorLado; i++) {
       for (int j = 0; j < cantidadDeParticulasPorLado; j++) {
         arrayDeParticulas[i][j] = mundoVirtual.makeParticle(0.25, (j * pasoEnX)-((cantidadDeParticulasPorLado/2)*pasoEnX) + naceX, 
@@ -31,7 +31,7 @@ class Tela {
         durezaDeResortes, elasticidadDeResortes, pasoEnX);
       }
     }
-    // making vertical springs
+    // se define la separación entre los resortes verticales
     for (int j = 0; j < cantidadDeParticulasPorLado; j++){
       for (int i = 1; i < cantidadDeParticulasPorLado; i++){
         mundoVirtual.makeSpring(arrayDeParticulas[i - 1][j], arrayDeParticulas[i][j], 
@@ -46,6 +46,8 @@ class Tela {
     arrayDeParticulas[24][30].makeFixed(); //derecha
     arrayDeParticulas[36][30].makeFixed(); //izq
   }
+  
+  // set para cambiar el color de la tela
   
   void setColor(color _clr) {
      clr = _clr;

@@ -4,7 +4,7 @@
    Valeria Navarro - 2018254437
    Samantha Pan Tseng  - 2019065194
    Elke Segura Badilla - 2018086696
-   Valeria Leslie Serrano - 
+   Leslie Valeria Serrano - 2019159088
 */
 
 import traer.physics.*;

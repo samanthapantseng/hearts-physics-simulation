@@ -13,6 +13,8 @@ class Corazon {
     fill(#ffffff,0);
     circle(pX,pY,50);    
   }
+  
+  //métodos para retornar la posición
    
   float getX() {
   return pX;
